@@ -1,54 +1,162 @@
-# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define e = Character("Eileekfdjgvflskdn")
-
-# The game starts here.
+Characters
+define p = Character("Princess")
+define s = Character("Sparrow")
+define k = Character("King")
+define e = Character("Escabar")
+define m = Character("Maid")
+define b = Character("Bodyguard")
+#Scenes
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+ # black background
+    e "A long time ago a sickness plagued the land."
+    e "No one knew who started it no where it came from, but it was the darkest thing it our history."
+    e "It was said that over time people would become stiff as stone, their bones locked and skin tightened until even their heart could pump no more."
+    e "This disease was so contagious, entire kingdoms were annihilated."
+    e "Until one day, a fateful hero arose."
+    e "This hero defeated the sickness, by going to distant lands to find the cure, in the fabled cave of life, and brought order back to the land."
+    e "This tale was shared from generation to generation and became as any word of mouth does..."
+    e "A legend."
+    e "We thought it was just that, until our dear princess started to show signs."
 
-    scene bg washington
+    # princess room background
+    "You are a princess of (...), believed to be a scion of the very hero who prevented the demolition of your entire society so long ago."
+    "Being the only child of your father, you are the sole heir to the throne."
+    "Your mother died when you were quite young, you can recall little of her but her kind gentle features and bubbly laugh will remain with you forever."
+    "You are loved by the people, known for your passionate and charismatic personality."
+    "You wake up in your bedroom sore and achy. Your throat hoarse and your joints stiffer than usual."
+    m "(Knocks on door)"
+    m "Good morning your highness. How are you on this fine day?"
+    p "Cough. Cough."
+    m "Are you okay?"
+    p "I don't feel quite right."
+    m "Let me get the king."
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    #castle room background
+    m "Your majesty, the princess is ill"
+    k "Oh no, my baby! Is she alright?"
+    m "I think you should see for yourself, my lord."
 
-    show eileen happy
+    # princess room background
+    k "Are you ok, honey?"
+    p "I'm fine. It's just a cold."
+    k "It looks more serious that that."
+    k "Escabar get over here!"
+    e "Yes my lord?"
+    e "(yawn)"
+    e "Isn't it a little early for this?"
+    k "The princess is sick."
+    p "Dad, I'm fine really."
+    e "Let me see. She definitely has a fever."
+    "Escabar examines you closesly. After a while his face becomes grimm."
+    e "Wait... my lord, can I talk to you in private"
 
-    # These display lines of dialogue.
+    # generic castle background
+    e "My lord, I've only seen these symptoms in the legends."
+    k "You better not be talking about what I think you are."
+    e "I'm afraid I am."
+    k "What are we going to do."
+    e "Hmmmm..."
+    e "I would confine her to the castle. If this if what we think it is, this will keep it from spreading to the entirety of the kingdom."
+    e "I would also get someone to watch over her. This person would keep us updated on her condition."
+    e "I would do it myself but you already know our current status."
+    k "It's unfortunate you two don't get along."
+    k "Do you have anyone in mind?"
+    e "I know just the one."
 
-    e "idk what to say."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
-menu:
-    "yes repeat":
-        jump choice1_yes
-    "no repeat":
-        jump choice1_no
-
+    #Training Yard background
+    "A Few Days Later."
+    "You are sitting at the wooden desk in your tower bedroom, reading a novel. Ecabar enters the room, a strange figure follows behind him."
+    e "Princess, I have someone here to meet you."
+    p "What? Who is it?"
+    e "This is your new bodyguard, Sparrow."
+    s "..."
+    p "Hi?"
+    s "..."
+    p "What is this?"
+    e "We thought you may need some extra protection."
+    p "From what? I'm alrerady not allowed to leave the castle."
+    e "It's for your own safety."
+    
+   menu: 
+    e "Very Well. Why are you here?":
+    jumpchoice1_yes
+    
+    e "Yeah right. I know you're up to something, just wait till I find out Escabar!":
+    jumpchoice1_no 
+    
+    label choice1_yes:
+    
+    
+    
 label choice1_yes:
-
     $ menu_flag = True
-    e "idk what to say."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-    jump choice1_done
-
+    s "..."
+    s "Sparrow."
+    p "Not much of a talker?"
+    p "Fine, leave me be for now."
+    
 label choice1_no:
-
-    $menu_flag = False
-    e "ok.."
+    #choice b (If you address Escabar)
+    $ menu_flag = False
+    p "Yeah right. I know you are up to something, just wait till I find out Escabar. "
+    e "Always suspicious, my lady. I assure you my intentions are pure (leaves)"
+    "You turn to your new bodyguard"
+    p "So, why did he bring you here?"
+    s "..."
+    p "Dont talk much, eh? Don't worry, I'll find out soon enough."
+    
     jump choice1_done
+    
+lable choice1_done:
+    #castle grounds/training yard
+    "The Next Day."
+    "The trianing yard."
+    "You stand in your training yard, a sword in your grasp. You practice striking at training dummies."
+    p "Yah!"
+    s "..."
+    p "Yes? (Strikes dummy again)"
+    s "..."
+    s "I can't stand this."
+    s "You're doing it wrong."
+    p "Excuse me?"
+    s "You need to raise your sword closer to your body else you'll leave it entirely exposed."
+    p "Arn't you a know it all."
+    s "..."
+    s "Or don't. I don't care."
 
-label choice1_done:
+    #choice c
+    p "Show me then."
+    "Sparrow walks up to you and moves your wrist to adjust the placement of your blade."
+    p "Yah!"
+    s "..."
+    s "Better."
+    p "Sparrow, was it? Who taught you to fight?"
+    s "(Shrugs)"
+    p "Quite the talker, eh?"
 
-    e "thats the end"
-    # This ends the game.
-    return
+    #choice d
+    p "I'm pretty sure I know what I'm doing."
+    p "Yah!"
+    s "(Rolls eyes)"
+
+    #
+    "(That evening)"
+    "You are sitting at the dining room table eating dinner. you pile food on your plate starving. You notice Sparrow sitting in the doorway watching."
+
+    #e
+    p "I Should invite Sparrow over."
+    p "Sparrow, would tyou like something to eat?"
+    s "..."
+    s "Fine."
+    "Sparrow hesitantly sits across from you and grabs an apple off the table. They romove their mask for the first time allowing you to clearly view their features for the first time."
+    "Dark orbs of eyes glare back at you, partially shrouded by dark hair."
+    "The eyes were suprisingly soft, but you can sense the pain within them."
+    "They are unlike anything you have ever seen."
+    p "You barely say anything. Why is that?"
+    s "It's not my place, my lady."
+    p "What if I make you speak."
+    s "Then I'm obliged to do so."
+    p "Then tell me why you're really here?"
+    s "I was sworn to secrecy. Even then, I know very little."
