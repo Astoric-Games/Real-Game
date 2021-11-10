@@ -123,10 +123,8 @@ label choice1_done:
     s "Or don't. I don't care."
 
 menu:
-
     "Show me then.":
         jump choice2_yes
-
 
     "I'm pretty sure I know what I'm doing.":
         jump choice2_no
@@ -153,8 +151,17 @@ label choice2_done:
     "(That evening)"
     "You are sitting at the dining room table eating dinner. you pile food on your plate starving. You notice Sparrow sitting in the doorway watching."
 
-    #e
-    p "I Should invite Sparrow over."
+menu:
+    "I Should invite Sparrow over.":
+        jump choice3_yes
+
+    "I want to eat alone.":
+        jump choice3_no
+
+label choice3_yes:
+
+    $ menu_flag = True
+
     p "Sparrow, would you like something to eat?"
     s "..."
     s "Fine."
@@ -175,11 +182,19 @@ label choice2_done:
     p "Very well, I'm going to head in for the night."
     s "(Nods.)"
     "On your way out Sparrow's strange eyes never leave you."
+    jump choice3_done
 
-    #f
+label choice3_no:
+
+    $ menu_flag = False
     "You peacefully eat dinner and head to bed."
+
     "On your way out Sparrow's eyes never leave you."
 
+    jump choice3_done
+
+
+label choice3_done:
     #scene 8
     "Late in the night, you find yourself having trouble sleeping. You decide to take a walk through the castle to clear your head."
     "You wander into one of the many hallways making up the vast labyrinth-like interior of the castle. The hallway is dark, and the flicker of firelight falls onto the stone wall, from an ajar door."
@@ -191,17 +206,21 @@ label choice2_done:
     "You hear a noise from down the hall, making you jump. You hope no one inside heard it."
     k "What was that?"
 
-    #g
-    "Run back to your room."
+menu:
+    "Run back to your room.":
+        jump choice4_yes
 
-    #h
-    "Stay for more information."
+    "Stay for more information.":
+        jump choice4_no
 
-    #if g
+label choice4_yes:
+    $ menu_flag = True
     "You quickly leave the hallway and arrive back in your room. you were lucky that you got away without them noticing."
     "You lay down in your bed and fall asleep, deciding to think about what to do in the morning."
+    jump choice4_done
 
-    #if h
+label choice4_no:
+    $ menu_flag = False
     "You freeze in the hallway. You hear footsteps approach the door."
     "Sparrow walks over to the door to investigate. You feel the glare of their eyes as they meet yours through the crack in the door"
     "and prepare for the inevitable consequences of your detection."
@@ -213,8 +232,9 @@ label choice2_done:
     s "Fine."
     "You recognize that the conversation has ended, and quickly make your way out of the corridor."
     "When you arrive in your room, you quickly climb into bed. Sleep will not be easy tonight."
+    jump choice4_done
 
-    #scene 9
+label choice4_done:
     "The next morning."
     "You wake and realize you can barely move. Your joints are extremely stiff and your throat feels as if it's on fire."
     p "Sparrow? SPARROW?!"
@@ -254,16 +274,20 @@ label choice2_done:
     p "Then what is this?"
     s "You didn't determine that yourself. I know you're smart enough."
     s "This is the very thing that led to the demise of thousands. The very thing your ancestors swore to destroy."
-    'Sparrow's eyes glare sinistrally. You notice a length of rope behind their back.'
+    "Sparrow's eyes glare sinistrally. You notice a length of rope behind their back."
 
-    #i
-    p "(You use the last bit of strength to take Sparrow by surprise.)"
-    #j
-    p "Don't do this."
-    #k
-    p "There has to be a cure."
+menu:
+    "(You use the last bit of strength to take Sparrow by surprise.)":
+        jump choice5_yes
 
-    # if i
+    "Don't do this.":
+        jump choice5_no
+
+    "There has to be a cure.":
+        jump choice5_maybe
+
+label choice5_yes:
+    $ menu_flag = True
     "You use the last bit of strength in you and manage to wrestle Sparrow to the ground. You force the rope from their grasp and tie them to your chair."
     p "Never underestimate my power."
     s "I never did."
@@ -280,42 +304,67 @@ label choice2_done:
     "You sneak into the library and steal the maps then manage to climb down the walls of the castle. You are free. no longer contained."
     "You find yourself upon a small summit, looking into the distance. The moon rises a full as night breaks the glowing colors of sunset, turning orange, purple, then black. The stars twinkle brightly, but one shines brighter than the rest."
     p "I'll follow that star, into the future!"
+    jump choice5_done
+
+
+label choice5_done:
     "The end."
 
-    #j
+label choice5_no:
+    $ menu_flag = False
     "It's too late, my lady."
     "Sparrow ties a rope around you and ties you to a chair, hindering your movements completely. You try to resist but are too weak to do so."
 
-    #ja
-    p "Why? I didn't think you were this way."
+
+menu:
+    "Why? I didn't think you were this way.":
+        jump choice6_yes
+
+    "I'm going to get you for this!":
+        jump choice6_no
+
+label choice6_yes:
+    $ menu_flag = True
     s "I have to do this."
     s "It's for the sake of the kingdom. It's one life to spare thousands."
     "Sparrow walks to the door of your room and opens it ajar. They sigh and look back at you."
     s "I'm sorry. I wish it didn't have to be this way."
     "Sparrow takes out a large ornamental key and closes the door behind them. The click of the lock leaves you with a deep feeling of dread."
     "You hear their footsteps recede from the door, leaving you alone in cold silence."
-    "The end."
-
-    #jb
+    jump choice6_done
+label choice6_no:
+    $ menu_flag = False
     "Sparrow walks to the door of your room and opens it ajar."
     s "..."
     s "No, you're not. Goodbye, princess."
     "Sparrow takes out a large ornamental key and closes the door behind them. The click of the lock leaves you with a deep feeling of dread."
     "You hear their footsteps recede from the door, leaving you alone in cold silence."
-    "The end."
+    jump choice6_done
 
-    #k
+label choice6_done:
+    "The End"
+
+label choice5_maybe:
     s "If only it was that easy."
     p "It could be. The legends all speak of the cave of life. There must be maps leading there in the library. We can save the kingdom for a pandemic before it even occurs."
     s "We?"
 
+menu:
+    "No, not we.":
+        jump choice7_yes
+
+    "Yes, we. We can do this. We could steal the maps and find the cave.":
+        jump choice7_no
+
     #ka
-    p "No, not we."
+label choice7_yes:
+    $ menu_flag = True
     "You use the last bit of strength in you and manage to wrestle Sparrow to the ground. You force the rope from their grasp and tie them to your chair."
     p "Never underestimate my power."
     s "I never did."
     p "I guess this is it."
     s "..."
+
     "You search Sparrow and find a key on them. You determine they were going to lock you in your tower! You feel betrayed by not only Sparrow but your father. Why would he do this to you, his daughter?"
     "Then you realize"
     "You knew the tales of this disease of legend. You knew how contagious it was said to be. Your father was doing this for the sake of the kingdom."
@@ -330,13 +379,15 @@ label choice2_done:
     "The end."
 
     #kb
-    p "Yes, we. We can do this. We could steal the maps and find the cave."
+label choice7_no:
+    $ menu_flag = False
     p "Then we can save the kingdom from an epidemic before it even occurs."
     s "My lady, you are getting weaker by the day. Who says you won't succumb to your illness before we can find the cave."
     p "I'm willing to take that chance. I need you to come with me to make sure if I don't make it, you will complete my quest."
-    "Join me, Sparrow."
+    p "Join me, Sparrow."
     "You hold out your hand and Sparrow takes it."
 
     "You are in pain, but determined. You and Sparrow sneak into the library and steal the maps. Using the rope you climb the walls of the castle. You are free, no longer contained. You stumble but Sparrow is always there to catch you. "
     "You and Sparrow find yourselves upon a small summit. The moon rises in full as night breaks the glowing colors of sunlight, turning orange, purple, then black. The stars blink brightly, one brighter than the rest."
     "Sparrow takes your hand and points to the star, shining almost as bright as the moon."
+    jump choice5_done
