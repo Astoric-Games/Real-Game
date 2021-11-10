@@ -86,16 +86,14 @@ menu:
 
     e "Yeah right. I know you're up to something, just wait till I find out Escabar!":
         jump choice1_no
-
-label choice1_yes:
-    $ menu_flag = True
+        
+if menu_flag:
     s "..."
     s "Sparrow."
     p "Not much of a talker?"
     p "Fine, leave me be for now."
 
-label choice1_no:
-    $ menu_flag = False
+else:
     p "Yeah right. I know you are up to something, just wait till I find out Escabar. "
     e "Always suspicious, my lady. I assure you my intentions are pure (leaves)"
     "You turn to your new bodyguard."
