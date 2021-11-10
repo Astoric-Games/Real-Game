@@ -81,19 +81,21 @@ label start:
 
 menu:
 
-    e "Very Well. Why are you here?":
+    "Very Well. Why are you here?":
         jump choice1_yes
 
-    e "Yeah right. I know you're up to something, just wait till I find out Escabar!":
+    "Yeah right. I know you're up to something, just wait till I find out Escabar!":
         jump choice1_no
-        
-if menu_flag:
+
+label choice1_yes:
+    $ menu_flag = True
     s "..."
     s "Sparrow."
     p "Not much of a talker?"
     p "Fine, leave me be for now."
 
-else:
+label choice1_no:
+    $ menu_flag = False
     p "Yeah right. I know you are up to something, just wait till I find out Escabar. "
     e "Always suspicious, my lady. I assure you my intentions are pure (leaves)"
     "You turn to your new bodyguard."
@@ -103,7 +105,7 @@ else:
 
     jump choice1_done
 
-lable choice1_done:
+label choice1_done:
     #castle grounds/training yard
     "The Next Day."
     "The trianing yard."
@@ -122,11 +124,11 @@ lable choice1_done:
 
 menu:
 
-    p "Show me then.":
+    "Show me then.":
         jump choice2_yes
 
 
-    p "I'm pretty sure I know what I'm doing.":
+    "I'm pretty sure I know what I'm doing.":
         jump choice2_no
 
 label choice2_yes:
@@ -174,11 +176,11 @@ label choice2_done:
     s "(Nods.)"
     "On your way out Sparrow's strange eyes never leave you."
 
-    #f 
+    #f
     "You peacefully eat dinner and head to bed."
     "On you way out Sparrow's eyes never leave you."
 
-    #scene 8 
+    #scene 8
     "Late in the night you find yourself having trouble sleeping. You decide to take a walk through the castle to clear your head."
     "You wander into one of the many hallways making up the vast labrinth-like interior of the castle. The hallway is dark, and the flicker of firelight falls onto the stone wall, from a ajar door."
     "You hear voices from within the room, and your blood goes cold as the come into earshot."
@@ -189,17 +191,17 @@ label choice2_done:
     "You hear a noise from down the hall, making you jump. You hope no noe inside heard it."
     k "What was that?"
 
-    #g 
+    #g
     "Run back to your room."
 
-    #h 
+    #h
     "Stay for more information."
 
     #if g
     "You quickly leave the hallway, and arrive back in your room. you were lucky that you got away without them noticing."
     "You lay down in your bed and fall asleep, decideing to think about what to do in the morning."
 
-    #if h 
+    #if h
     "You freeze in the hallway. You hear footsteps approach the door."
     "Sparrow walks over to the door to investigate. You feel the glare of their eyes as they meet yours through the crack in the door"
     "and prepare for the inevitable consequences of yuor detection."
@@ -254,13 +256,13 @@ label choice2_done:
     s "This is the very thing that led to the demise of thousands. The very thing your ancestors swore to destroy."
     'Sparrow eyes glare sinistrally. You notice a length of rope behind their back.'
 
-    #i 
+    #i
     p "(You use the last bit of strength to take Sparrow by surprise.)"
-    #j 
+    #j
     p "Don't do this."
     #k
     p "There has to be a cure."
-    
+
     # if i
     "You use the last bit of strenth in you and manage to wrestle Sparrow to the ground. You force the rope from their grasp and tie them to your chair."
     p "Never underestimate my power."
@@ -280,11 +282,11 @@ label choice2_done:
     p "I'll follow that star, into the future!"
     "The end."
 
-    #j 
+    #j
     "It's too late, my lady."
     "Sparrow ties a rope around you and ties you to a chair, hindering your movements completely. You try to resist but are too weak to do so."
 
-    #ja 
+    #ja
     p "Why? I didn't think you were this way."
     s "I have to do this."
     s "It's for the sake of the kingdom. It's one life to spare thousands."
@@ -293,15 +295,15 @@ label choice2_done:
     "Sparrow takes out a large ornamental key and closes the door behind them. The click of the lock leaves you with a deep feeling of dread."
     "You hear their footsteps recede from the door, leaving you alone in cold silence."
     "The end."
-    
-    #jb 
+
+    #jb
     "Sparrow walks to the door of your room and opens it ajar."
     s "..."
     s "No, you're not. Goodbye, princess."
     "Sparrow takes out a large ornamental key and closes the door behind them. The click of the lock leaves you with a deep feeling of dread."
     "You hear their footsteps recede from the door, leaving you alone in cold silence."
     "The end."
-    
+
     #k
     s "If only it was that easy."
     p "It could be. The legends all speak of the cave of life. There must be maps leading there in the library. We can save ther kingdom for a pandemic before it even occurs."
@@ -336,6 +338,5 @@ label choice2_done:
     "You hold out your hand and Sparrow takes it."
 
     "You are in pain, but determined. You and Sparrow sneak into the library and steal the maps. Using the rope you climb the walls of the castle. You are free, no longer contained. You stumble but Sparrow is always there to catch you. "
-    "You and Sparrow find yourselfs upon a small summit. The moon rises in full as night breaks the glowing colors of sunlight, turning orange, purple, then black. The stars blink brightly, one brighter than the rest.
+    "You and Sparrow find yourselfs upon a small summit. The moon rises in full as night breaks the glowing colors of sunlight, turning orange, purple, then black. The stars blink brightly, one brighter than the rest."
     "Sparrow takes your hand and points to the star, shining almost as bright as the moon."
-    
