@@ -12,10 +12,11 @@ label start:
  # black background
     e "A long time ago a sickness plagued the land."
     e "No one knew who started it nor where it came from, but it was the darkest thing in our history."
-    e "It was said that over time people would become stiff as stone, their bones locked and skin tightened until even their heart could pump no more."
+    e "It was said that over time people would become stiff as stone,"
+    e "Their bones locked and skin tightened until even their heart could pump no more."
     e "This disease was so contagious, entire kingdoms were annihilated."
     e "Until one day, a fateful hero arose."
-    e "This hero defeated the sickness, by going to distant lands to find the cure, in the fabled cave of life, and brought order back to the land."
+    e "This hero defeated the sickness by fabled cave of life, and brought order back to the land."
     e "This tale was shared from generation to generation and became as any word of mouth does..."
     e "A legend."
     e "We thought it was just that until our dear princess started to show signs."
@@ -23,42 +24,48 @@ label start:
     # princess room background
     "You are a princess of (...), believed to be a scion of the very hero who prevented the demolition of your entire society so long ago."
     "Being the only child of your father, you are the sole heir to the throne."
-    "Your mother died when you were quite young, you can recall little of her but her kind gentle features and bubbly laugh will remain with you forever."
+    "Your mother died when you were quite young."
+    "You can recall little of her but her kind gentle features and bubbly laugh will remain with you forever."
     "You are loved by the people, known for your passionate and charismatic personality."
-    "You wake up in your bedroom sore and achy. Your throat hoarse and your joints stiffer than usual."
-    m "(Knocks on door)"
+    "You wake up in your bedroom sore and achy."
+    "Your throat hoarse and your joints stiffer than usual."
+    "Your maid knocks on your door."
     m "Good morning your highness. How are you on this fine day?"
     p "Cough. Cough."
     m "Are you okay?"
     p "I don't feel quite right."
     m "Let me get the king."
 
-    #castle room background
+    # king office background
+    "Your maid enters the kings room."
     m "Your majesty, the princess is ill"
     k "Oh no, my baby! Is she alright?"
     m "I think you should see for yourself, my lord."
 
     # princess room background
+    "Your father enters your room."
     k "Are you ok, honey?"
     p "I'm fine. It's just a cold."
     k "It looks more serious than that."
     k "Escabar get over here!"
     e "Yes my lord?"
-    e "(yawn)"
+    "Escabar audiby yawns."
     e "Isn't it a little early for this?"
     k "The princess is sick."
     p "Dad, I'm fine really."
-    e "Let me see. She has a fever."
+    e "Let me see."
     "Escabar examines you closely. After a while his face becomes grim."
     e "Wait... my lord, can I talk to you in private"
 
     # generic castle background
+    "Escabar and the king leave the room."
     e "My lord, I've only seen these symptoms in the legends."
     k "You better not be talking about what I think you are."
     e "I'm afraid I am."
     k "What are we going to do."
     e "Hmmmm..."
-    e "I would confine her to the castle. If this is what we think it is, this will keep it from spreading to the entirety of the kingdom."
+    e "I would confine her to the castle."
+    e "If this is what we think it is, this will keep it from spreading to the entirety of the kingdom."
     e "I would also get someone to watch over her. This person would keep us updated on her condition."
     e "I would do it myself but you already know our current status."
     k "It's unfortunate you two don't get along."
@@ -67,7 +74,8 @@ label start:
 
     #Princess room background
     "A Few Days Later."
-    "You are sitting at the wooden desk in your tower bedroom, reading a novel. Escabar enters the room, a strange figure follows behind him."
+    "You are sitting at the wooden desk in your tower bedroom, reading a novel."
+    "Escabar enters the room, a strange figure follows behind him."
     e "Princess, I have someone here to meet you."
     p "What? Who is it?"
     e "This is your new bodyguard, Sparrow."
@@ -90,7 +98,6 @@ menu:
 label choice1_yes:
     $ menu_flag = True
     s "..."
-    s "Sparrow."
     p "Not much of a talker?"
     p "Fine, leave me be for now."
 
@@ -109,7 +116,11 @@ label choice1_done:
     #castle grounds/training yard
     "The Next Day."
     "The training yard."
-    "You stand in your training yard, a sword in your grasp. You practice striking at training dummies."
+    "You stand in the training yard, a sword in your grasp."
+    "You practice striking at training dummies."
+    "You knew this was probally the worst thing you could do while sick,"
+    "but you figure you're not that sick."
+    "Anyways, you'd learn much more developing your martial prowless than sitting in bed all day."
     p "Yah!"
     s "..."
     p "Yes? (Strikes dummy again)"
@@ -139,6 +150,8 @@ label choice2_yes:
     s "(Shrugs)"
     p "Quite the talker, eh?"
 
+    jump choice2_done
+
 label choice2_no:
     $ menu_flag = False
     p "I'm pretty sure I know what I'm doing."
@@ -149,7 +162,8 @@ label choice2_no:
 
 label choice2_done:
     "(That evening)"
-    "You are sitting at the dining room table eating dinner. you pile food on your plate starving. You notice Sparrow sitting in the doorway watching."
+    "You are sitting at the dining room table eating dinner. you pile food on your plate starving."
+    "You notice Sparrow sitting in the doorway watching."
 
 menu:
     "I Should invite Sparrow over.":
@@ -165,7 +179,8 @@ label choice3_yes:
     p "Sparrow, would you like something to eat?"
     s "..."
     s "Fine."
-    "Sparrow hesitantly sits across from you and grabs an apple off the table. They remove their mask for the first time allowing you to clearly view their features for the first time."
+    "Sparrow hesitantly sits across from you and grabs an apple off the table."
+    "They remove their mask for the first time allowing you to clearly view their features for the first time."
     "Dark orbs of eyes glare back at you, partially shrouded by dark hair."
     "The eyes were surprisingly soft, but you can sense the pain within them."
     "They are unlike anything you have ever seen."
@@ -196,8 +211,10 @@ label choice3_no:
 
 label choice3_done:
     #scene 8
-    "Late in the night, you find yourself having trouble sleeping. You decide to take a walk through the castle to clear your head."
-    "You wander into one of the many hallways making up the vast labyrinth-like interior of the castle. The hallway is dark, and the flicker of firelight falls onto the stone wall, from an ajar door."
+    "Late in the night, you find yourself having trouble sleeping."
+    "You decide to take a walk through the castle to clear your head."
+    "You wander into one of the many hallways making up the vast labyrinth-like interior of the castle."
+    "The hallway is dark, and the flicker of firelight falls onto the stone wall, from an ajar door."
     "You hear voices from within the room, and your blood goes cold as they come into earshot."
     k "We can not allow this illness to escape into the rest of the kingdom. If she becomes weaker, you know what we must do."
     s "We have more time, sir."
@@ -222,7 +239,8 @@ label choice4_yes:
 label choice4_no:
     $ menu_flag = False
     "You freeze in the hallway. You hear footsteps approach the door."
-    "Sparrow walks over to the door to investigate. You feel the glare of their eyes as they meet yours through the crack in the door"
+    "Sparrow walks over to the door to investigate."
+    "You feel the glare of their eyes as they meet yours through the crack in the door"
     "and prepare for the inevitable consequences of your detection."
     s "I don't hear anything now, sir. I must have been the wind."
     k "Hmmm"
@@ -250,13 +268,16 @@ label choice4_done:
     k "Yes?"
     s "I need to talk to you about the princess, sire."
     k "Come in."
-    "The room is brightly lit with firelight. The king sits at his large mahogany desk. Escabar stands across from him. They appear to be deep in conversation about some matter of importance."
+    "The room is brightly lit with firelight. The king sits at his large mahogany desk."
+    "Escabar stands across from him. They appear to be deep in conversation about some matter of importance."
     k "What is it?"
     s "The princess's condition has worsened, sir."
     k "How so?"
     "The king looks to Escabar."
     k "This this it then?"
-    e "I scoured the library for a cure to no avail. All that remains are the maps to the cave of life where the cure is said to recede. We are out of time, my lord. Deepest apologies."
+    e "I scoured the library for a cure to no avail."
+    e "All that remains are the maps to the cave of life where the cure is said to recede. We are out of time, my lord."
+    e "Deepest apologies."
     "The king looks back to Sparrow."
     k "Contain the princess to the tower at once. This can't spread to the rest of the kingdom."
     s "Yes, sire."
@@ -265,14 +286,16 @@ label choice4_done:
 
     #scene 11
     "Your bedroom."
-    "You manage to hoist yourself up. You take a glance in the mirror and are horrified by the sight in front of you."
-    "Your skin is abnormally pale and your once bright cheery cheeks sunken in. Your body burns in hot white pain with each agonizing step."
+    "You manage to hoist yourself up."
+    "You take a glance in the mirror and are horrified by the sight in front of you."
+    "Your skin is abnormally pale and your once bright cheery cheeks sunken in."
+    "Your body burns in hot white pain with each agonizing step."
     "Sparrow enters the room."
     s "My lady, sit down. You're going to hurt yourself."
     p "What is happening to me?!"
     s "You were foolish to believe this was just some common cold."
     p "Then what is this?"
-    s "You didn't determine that yourself. I know you're smart enough."
+    s "You didn't determine that yourself? I know you're smart enough."
     s "This is the very thing that led to the demise of thousands. The very thing your ancestors swore to destroy."
     "Sparrow's eyes glare sinistrally. You notice a length of rope behind their back."
 
@@ -288,21 +311,27 @@ menu:
 
 label choice5_yes:
     $ menu_flag = True
-    "You use the last bit of strength in you and manage to wrestle Sparrow to the ground. You force the rope from their grasp and tie them to your chair."
+    "You use the last bit of strength in you and manage to wrestle Sparrow to the ground."
+    "You force the rope from their grasp and tie them to your chair."
     p "Never underestimate my power."
     s "I never did."
     p "I guess this is it."
     s "..."
-    "You search Sparrow and find a key on them. You determine they were going to lock you in your tower! You feel betrayed by not only Sparrow but your father. Why would he do this to you, his daughter?"
+    "You search Sparrow and find a key on them. You determine they were going to lock you in your tower!"
+    "You feel betrayed by not only Sparrow but your father. Why would he do this to you, his daughter?"
     "Then you realize"
-    "You knew the tales of this disease of legend. You knew how contagious it was said to be. Your father was doing this for the sake of the kingdom."
+    "You knew the tales of this disease of legend. You knew how contagious it was said to be."
+    "Your father was doing this for the sake of the kingdom."
     "but it didn't have to be this way."
     "You could find the cure! This would all be resolved."
     "The legends all speak of the cave of life. There must be maps in the library. You could find it."
 
     "Through in pain, you are determined."
-    "You sneak into the library and steal the maps then manage to climb down the walls of the castle. You are free. no longer contained."
-    "You find yourself upon a small summit, looking into the distance. The moon rises a full as night breaks the glowing colors of sunset, turning orange, purple, then black. The stars twinkle brightly, but one shines brighter than the rest."
+    "You sneak into the library and steal the maps then manage to climb down the walls of the castle."
+    "You are free. no longer contained."
+    "You find yourself upon a small summit, looking into the distance."
+    "The moon rises a full as night breaks the glowing colors of sunset, turning orange, purple, then black."
+    "The stars twinkle brightly, but one shines brighter than the rest."
     p "I'll follow that star, into the future!"
     jump choice5_done
 
@@ -313,7 +342,8 @@ label choice5_done:
 label choice5_no:
     $ menu_flag = False
     "It's too late, my lady."
-    "Sparrow ties a rope around you and ties you to a chair, hindering your movements completely. You try to resist but are too weak to do so."
+    "Sparrow ties a rope around you and ties you to a chair, hindering your movements completely."
+    "You try to resist but are too weak to do so."
 
 
 menu:
@@ -327,17 +357,21 @@ label choice6_yes:
     $ menu_flag = True
     s "I have to do this."
     s "It's for the sake of the kingdom. It's one life to spare thousands."
-    "Sparrow walks to the door of your room and opens it ajar. They sigh and look back at you."
+    "Sparrow walks to the door of your room and opens it ajar."
+    "They sigh and look back at you."
     s "I'm sorry. I wish it didn't have to be this way."
-    "Sparrow takes out a large ornamental key and closes the door behind them. The click of the lock leaves you with a deep feeling of dread."
+    "Sparrow takes out a large ornamental key and closes the door behind them."
+    "The click of the lock leaves you with a deep feeling of dread."
     "You hear their footsteps recede from the door, leaving you alone in cold silence."
     jump choice6_done
+
 label choice6_no:
     $ menu_flag = False
     "Sparrow walks to the door of your room and opens it ajar."
     s "..."
     s "No, you're not. Goodbye, princess."
-    "Sparrow takes out a large ornamental key and closes the door behind them. The click of the lock leaves you with a deep feeling of dread."
+    "Sparrow takes out a large ornamental key and closes the door behind them."
+    "The click of the lock leaves you with a deep feeling of dread."
     "You hear their footsteps recede from the door, leaving you alone in cold silence."
     jump choice6_done
 
@@ -346,7 +380,9 @@ label choice6_done:
 
 label choice5_maybe:
     s "If only it was that easy."
-    p "It could be. The legends all speak of the cave of life. There must be maps leading there in the library. We can save the kingdom for a pandemic before it even occurs."
+    p "It could be. The legends all speak of the cave of life."
+    "There must be maps leading there in the library."
+    "We can save the kingdom for a pandemic before it even occurs."
     s "We?"
 
 menu:
@@ -359,35 +395,51 @@ menu:
     #ka
 label choice7_yes:
     $ menu_flag = True
-    "You use the last bit of strength in you and manage to wrestle Sparrow to the ground. You force the rope from their grasp and tie them to your chair."
+    "You use the last bit of strength in you and manage to wrestle Sparrow to the ground."
+    "You force the rope from their grasp and tie them to your chair."
     p "Never underestimate my power."
     s "I never did."
     p "I guess this is it."
     s "..."
 
-    "You search Sparrow and find a key on them. You determine they were going to lock you in your tower! You feel betrayed by not only Sparrow but your father. Why would he do this to you, his daughter?"
+    "You search Sparrow and find a key on them. You determine they were going to lock you in your tower!"
+    "You feel betrayed by not only Sparrow but your father. Why would he do this to you, his daughter?"
     "Then you realize"
-    "You knew the tales of this disease of legend. You knew how contagious it was said to be. Your father was doing this for the sake of the kingdom."
+    "You knew the tales of this disease of legend. You knew how contagious it was said to be."
+    "Your father was doing this for the sake of the kingdom."
     "but it didn't have to be this way."
     "You could find the cure! This would all be resolved."
     "The legends all speak of the cave of life. There must be maps in the library. You could find it."
 
     "Through in pain, you are determined."
-    "You sneak into the library and steal the maps then manage to climb down the walls of the castle. You are free. no longer contained."
-    "You find yourself upon a small summit, looking into the distance. The moon rises a full as night breaks the glowing colors of sunset, turning orange, purple, then black. The stars twinkle brightly, but one shines brighter than the rest."
+    "You sneak into the library and steal the maps then manage to climb down the walls of the castle."
+    "You are free. no longer contained."
+    "You find yourself upon a small summit, looking into the distance."
+    "The moon rises a full as night breaks the glowing colors of sunset, turning orange, purple, then black."
+    "The stars twinkle brightly, but one shines brighter than the rest."
     p "I'll follow that star, into the future!"
-    "The end."
+    "The End."
 
     #kb
 label choice7_no:
     $ menu_flag = False
     p "Then we can save the kingdom from an epidemic before it even occurs."
-    s "My lady, you are getting weaker by the day. Who says you won't succumb to your illness before we can find the cave."
-    p "I'm willing to take that chance. I need you to come with me to make sure if I don't make it, you will complete my quest."
+    s "My lady, you are getting weaker by the day."
+    "Who says you won't succumb to your illness before we can find the cave."
+    p "I'm willing to take that chance."
+    "I need you to come with me to make sure if I don't make it, you will complete my quest."
     p "Join me, Sparrow."
     "You hold out your hand and Sparrow takes it."
 
-    "You are in pain, but determined. You and Sparrow sneak into the library and steal the maps. Using the rope you climb the walls of the castle. You are free, no longer contained. You stumble but Sparrow is always there to catch you. "
-    "You and Sparrow find yourselves upon a small summit. The moon rises in full as night breaks the glowing colors of sunlight, turning orange, purple, then black. The stars blink brightly, one brighter than the rest."
+    "You are in pain, but determined."
+    "You and Sparrow sneak into the library and steal the maps."
+    "Using the rope, you climb the walls of the castle."
+    "You are free, no longer contained. You stumble but Sparrow is always there to catch you. "
+    "You and Sparrow find yourselves upon a small summit."
+    "The moon rises in full as night breaks the glowing colors of sunlight, turning orange, purple, then black."
+    "The stars blink brightly, one brighter than the rest."
     "Sparrow takes your hand and points to the star, shining almost as bright as the moon."
+    s "We'll follow that star into the future!"
+    p "Into the future!"
+    "The End."
     jump choice5_done
